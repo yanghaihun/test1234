@@ -101,7 +101,7 @@ public class RecordServiceImpl {
                 }
             }
             // 继续从控制台读取数据
-            mSelectedLoadType = 2;
+            mSelectedLoadType = LOAD_DATA_FROM_FILE_CONSOLE_TYPE;
             continueToLoadData();
         } catch (IOException e) {
             System.out.println("从文件读取数据失败！（文件名:" + fileName + "）,Goodbye and have a nice day :)");
@@ -163,7 +163,7 @@ public class RecordServiceImpl {
                 // 新金额小于0
                 if (newMoney < 0) {
                     String msg = "计算后金额小于0，保存失败";
-                    System.out.println("计算后金额小于0，保存失败");
+                    System.out.println(msg);
                     return msg;
                 } else {
                     concurrentHashMap.put(record.getmRecordName(), newMoney);
